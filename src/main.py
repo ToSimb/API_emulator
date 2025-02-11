@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 
 from freon.router import router as router_freon
+from at.router import router as router_at
 
 def get_application() -> FastAPI:
     application = FastAPI(
@@ -12,3 +13,5 @@ def get_application() -> FastAPI:
 app = get_application()
 
 app.include_router(router_freon)
+
+app.include_router(router_at)
